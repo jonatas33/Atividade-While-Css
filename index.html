@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="apple-touch-icon.png" type="image/x-icon">
+    <title>Atividade While</title>
+</head>
+<body>
+<h1>Contagem início Fim</h1>
+<p>Use qualquer valor nas caixas, simule crescentes e regressivas.</p>
+    <section id="entradas">
+        <form action="#" method="get">
+            <p>
+                <label for="fn1">Valor Inicial:</label>
+                <input type="number" name="n1" id="fn1" placeholder="Início da contagem">
+            </p>
+            <p>
+                <label for="fn1">Valor Final</label>
+                <input type="number" name="n2" id="fn2" placeholder="Fim da contagem">
+            </p>
+            <p>
+                <input type="submit" value="Contar" formaction="javascript:contagem()">
+            </p>
+        </form>
+    </section><!--Id entradas-->
+    <section id="saida">
+        <p>Preencha os dados acima e aperte o botão.</p>
+    </section><!--Id Saída-->
+    
+    <script>
+        function contagem(){
+            var saida = document.getElementById('saida')
+            var n1 = Number(document.getElementById('fn1').value)
+            var n2 = Number(document.getElementById('fn2').value)
+            var cont
+
+    saida.innerHTML += `<h2>Contando de ${n1} ate ${n2}</h2>`
+    if (n1<n2){
+        cont = n1
+        while(cont <=n2){
+            saida.innerHTML +=  `${cont} &#x1F449;` 
+            cont ++ //cont = cont + 1
+        }    
+    }else if (n2<n1){
+        cont = n1
+        while(cont >=n2){
+            saida.innerHTML +=  `${cont} &#x1F449; ` //https://graphemica.com/
+            cont -- //cont = cont - 1
+        }    
+    }else{
+        saida.innerHTML += `Não é possível contar, pois os números são iguais`
+    }
+    saida.innerHTML += `&#x1F3C1;`
+   }
+    </script>
+</body>
+</html>
